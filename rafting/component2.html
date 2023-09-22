@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rafting2</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="grid md:grid-cols-2 p-6 md:p-20 bg-slate-200">
+        <div class="md:p-12"><img class="rounded-lg" src="MicrosoftTeams-image (5).png" alt=""></div>
+        <div class="p-12">
+            <h1 class="font-semibold text-2xl pb-4">Contact Us</h1>
+            <form action="process.php" method="post">
+                <label class="font-bold text-lg pb-2" for="name">Name:</label><br>
+                <input class="w-64 md:w-2/3 h-8 rounded-lg" type="text" id="name" name="name" required><br><br>
+        
+                <label class="font-bold text-lg pb-2" for="email">Email:</label><br>
+                <input class="w-64 md:w-2/3 h-8 rounded-lg" type="email" id="email" name="email" required><br><br>
+        
+                <label class="font-bold text-lg pb-2" for="number">Number:</label><br>
+                <input class="w-64 md:w-2/3 h-8 rounded-lg" type="number" id="number" name="number" required><br><br>
+        
+                <input class="w-2/3 h-8 rounded-lg font-bold text-xl bg-orange-500" class="font-bold text-lg" type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

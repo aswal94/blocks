@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Section with Changing Background Images</title>
+    <!-- Include the Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS for the hero section */
+        .hero-container {
+            height: 100vh;
+        }
+
+        .hero-image {
+            background-size: cover;
+            background-position: center;
+            animation: imageRotation 6s linear infinite;
+        }
+
+        @keyframes imageRotation {
+            0%, 100% {
+                opacity: 0;
+            }
+            10%, 90% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-container relative">
+        <!-- Background Images (Background Carousel) -->
+        <div class="absolute inset-0 bg-cover bg-no-repeat bg-center hero-image" style="background-image: url('https://images.unsplash.com/photo-1506260408121-e353d10b87c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z3JlZW4lMjBoaWxsc3xlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80');"></div>
+        <div class="absolute inset-0 bg-cover bg-no-repeat bg-center hero-image" style="background-image: url('https://wallpapercosmos.com/w/full/5/3/c/1239470-3840x2160-desktop-4k-green-hills-background-image.jpg');"></div>
+        
+
+        <!-- Hero Content -->
+        <div class="absolute inset-0 flex flex-col justify-center items-center text-center text-white z-10">
+            <h1 class="text-5xl font-bold mb-4">
+                Rafting, Camping
+                Tour Packages In India</h1>
+            <p class="text-2xl">Travel the world and explore beautiful
+                destinations with us.</p>
+            <a href="#" class="mt-6 bg-blue-500 hover:bg-blue-600 text-white text-xl font-semibold py-2 px-4 rounded-full inline-block transition duration-300 ease-in-out transform hover:scale-105">Book a tour know</a>
+        </div>
+    </section>
+
+    <!-- Include any JavaScript you need -->
+
+    <script>
+        const images = ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStnUT5SlOUFGbmGwh3_irJBYjrCuuc_SBcTQ&usqp=CAU', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWCXrmxaHOnVKgP1CncK3AgnAINeGADw089Q&usqp=CAU']; // List your image paths here
+        let currentIndex = 0;
+
+        function changeImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            const heroImages = document.querySelectorAll('.hero-image');
+            heroImages.forEach((image, index) => {
+                if (index === currentIndex) {
+                    image.style.opacity = '1';
+                } else {
+                    image.style.opacity = '0';
+                }
+            });
+        }
+
+        setInterval(changeImage, 2000); // Change image every 2 seconds
+    </script>
+</body>
+</html>
